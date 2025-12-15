@@ -19,7 +19,8 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.ajobr.programacaomobile_commerceapp"
     },
     "web": {
       "output": "static",
@@ -45,7 +46,8 @@
       "reactCompiler": true
     },
     "extra": {
-      "router": {},
+      "router": {
+      },
       "eas": {
         "projectId": "a7ab51eb-a037-4ccf-b32d-9dab87f01aa2"
       }
