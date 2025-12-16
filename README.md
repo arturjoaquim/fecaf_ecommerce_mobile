@@ -1,50 +1,101 @@
-# Welcome to your Expo app 👋
+# Commerce App - Programação Mobile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este é um aplicativo de comércio eletrônico desenvolvido como parte da disciplina de Programação Mobile. O aplicativo permite visualizar produtos divididos por categorias (Masculino e Feminino), ver detalhes de cada produto e simular um fluxo de autenticação.
 
-## Get started
+## 🚀 Tecnologias Utilizadas
 
-1. Install dependencies
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-   ```bash
-   npm install
-   ```
+-   **[React Native](https://reactnative.dev/)**: Framework principal para desenvolvimento mobile.
+-   **[Expo](https://expo.dev/)**: Plataforma e conjunto de ferramentas para facilitar o desenvolvimento React Native.
+-   **[Expo Router](https://docs.expo.dev/router/introduction/)**: Sistema de roteamento baseado em arquivos (File-system routing).
+-   **[TypeScript](https://www.typescriptlang.org/)**: Superset do JavaScript que adiciona tipagem estática.
+-   **[Context API](https://react.dev/learn/passing-data-deeply-with-context)**: Para gerenciamento de estado global (Autenticação).
+-   **Service Layer Pattern**: Arquitetura para segregar a lógica de negócios e chamadas de API.
 
-2. Start the app
+## 📱 Funcionalidades
 
-   ```bash
-   npx expo start
-   ```
+-   **Autenticação (Simulada):**
+    -   Tela de Login com validação de campos (usuário e senha obrigatórios, senha mínima de 6 caracteres).
+    -   Gerenciamento de sessão via Context API.
+    -   Botão de Logout.
+-   **Navegação:**
+    -   Navegação por Abas (Tabs) para as seções principais (Masculino/Feminino).
+    -   Navegação por Abas Superiores (Top Tabs) para subcategorias de produtos.
+    -   Navegação em Pilha (Stack) para detalhes do produto.
+-   **Listagem de Produtos:**
+    -   Consumo da API pública [DummyJSON](https://dummyjson.com/).
+    -   Filtragem de produtos por categoria.
+    -   Barra de pesquisa para filtrar produtos na lista atual.
+-   **Detalhes do Produto:**
+    -   Visualização detalhada com imagem, descrição, preço e avaliação.
 
-In the output, you'll find options to open the app in a
+## 📸 Screenshots
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+| Login | Lista de Produtos | Detalhes do Produto |
+|:---:|:---:|:---:|
+| ![Login](https://imgur.com/yimjaDX) | ![Lista](https://imgur.com/P7fFFsq) | ![Detalhes](https://imgur.com/Z49wcGu) |
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+*(Substitua os links acima por prints reais do seu aplicativo)*
 
-## Get a fresh project
+## 🛠️ Pré-requisitos
 
-When you're ready, run:
+Antes de começar, você precisa ter instalado em sua máquina:
 
-```bash
-npm run reset-project
+-   [Node.js](https://nodejs.org/en/) (versão LTS recomendada)
+-   [Git](https://git-scm.com/)
+
+## 📦 Instalação e Execução
+
+1.  **Clone o repositório:**
+
+    ```bash
+    git clone <URL_DO_SEU_REPOSITORIO>
+    cd programacaomobile_commerceapp
+    ```
+
+2.  **Instale as dependências:**
+
+    ```bash
+    npm install
+    # ou
+    npx expo install
+    ```
+
+3.  **Execute o projeto:**
+
+    ```bash
+    npx expo start -c
+    ```
+    *(A flag `-c` limpa o cache, garantindo que as últimas configurações sejam carregadas)*
+
+4.  **Abra no seu dispositivo:**
+    -   **Android:** Pressione `a` no terminal (requer emulador ou dispositivo conectado via USB).
+    -   **iOS:** Pressione `i` no terminal (requer simulador macOS).
+    -   **QR Code:** Escaneie o QR Code com o aplicativo **Expo Go** no seu celular (Android ou iOS).
+
+## 📂 Estrutura do Projeto
+
+O projeto segue uma estrutura organizada dentro da pasta `src`:
+
+```
+src/
+├── app/                 # Rotas e Telas (Expo Router)
+│   ├── (auth)/          # Grupo de rotas de autenticação (Login)
+│   ├── (categories)/    # Grupo de rotas principais (Abas Masculino/Feminino)
+│   ├── product/         # Rota dinâmica para detalhes do produto
+│   ├── _layout.tsx      # Layout raiz e configuração de navegação
+│   └── index.tsx        # "Porteiro" que redireciona baseado na autenticação
+├── components/          # Componentes reutilizáveis (ex: ProductList)
+├── context/             # Contextos do React (AuthContext)
+└── services/            # Lógica de negócios e chamadas de API (AuthService, ProductService)
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 📝 Notas Adicionais
 
-## Learn more
+-   A autenticação é simulada e os dados não persistem após fechar o app completamente (a menos que implementado AsyncStorage futuramente).
+-   A API utilizada é a `dummyjson.com`, que fornece dados fictícios para teste.
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Desenvolvido para a disciplina de Programação Mobile.
