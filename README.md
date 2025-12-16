@@ -32,11 +32,9 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ## 📸 Screenshots
 
-| Login | Lista de Produtos | Detalhes do Produto |
-|:---:|:---:|:---:|
-| ![Login](https://imgur.com/yimjaDX) | ![Lista](https://imgur.com/P7fFFsq) | ![Detalhes](https://imgur.com/Z49wcGu) |
-
-*(Substitua os links acima por prints reais do seu aplicativo)*
+|                Login                |              Lista de Produtos               |     Detalhes do Produto     |
+|:-----------------------------------:|:--------------------------------------------:|:---------------------------:|
+| ![Login](readme-archives/login.png) | ![Lista](readme-archives/lista-produtos.png) |        ![Detalhes](readme-archives/detalhes-produto.png)        |
 
 ## 🛠️ Pré-requisitos
 
